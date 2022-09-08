@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+/*Обнуление*/
+*{padding: 0; margin: 0; border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+
+
+// --------------------------------------------------------------------------------------
+
+.wrapper {
+	font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url("https://i.imgur.com/ZGLsBme.jpg");
+    background-attachment: fixed;
+    background-position: center;
+	background-repeat: no-repeat;
+    background-size: 260%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 1920px) {
+	.wrapper {
+		background-size: 100%;
+	}
+}
+@media only screen and (max-width: 1280px) {
+	.wrapper {
+		background-size: 200%;
+	}
+}
+@media only screen and (max-width: 720px) {
+	.wrapper {
+		background-size: 260%;
+	}
+}
+
+
+.wrapper {
+	--angle: 0deg;
+	width: 50vmin;
+	height: 50vmin;
+	border: .5vmin solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	
+	animation: 2s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+input[type="checkbox"] {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+}
+
+input[type="checkbox"]:after {
+	content: 'Toggle Fill';
+	white-space: nowrap;
+	padding-left: 1.5em;
+}
+
+input[type="checkbox"]:checked + .wrapper {
+	border-image-slice: 1 fill;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	place-items: center;
+	background: #fff;
+}
+
+footer {
+	text-align: center;
+	font-style: italic;
+}
+
+//=============================================================================
+
+.profile {
+    background-color: #fff;
+    width: 25em;
+    height: 48em;
+    border-radius: 2.3em;
+    filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+    display: flex;
+    flex-direction: column;
+	&__avatar {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 300;
+		letter-spacing: 0.2em;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		min-height: 200px;
+		padding: 2em 0 0 0;
+		text-align: center;
+	}
+	&__pic {
+		width: 128px;
+		height: 128px;
+		background-color: #fff;
+		margin: 0 auto;
+
+		& img {
+			width: 128px;
+			height: 128px;
+			border-radius: 50%;
+		}
+	}
+	&__nickname {
+		font-weight: 400;
+		font-size: 20px;
+		margin: .5em 0 .5em 0;
+	}
+	&__subtitle {
+		color: rgba(0, 0, 0, 0.8)
+	}
+	&__container {
+		min-height: 375px;
+		margin: 0 auto;
+	}
+	&__nav {
+		margin: 2em 0 0 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 375px;
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: .5em;
+		width: 22em;
+		height: 3em;
+		text-align: center;
+		& a {
+			width: 22em;
+			height: 3em;
+			border: rgba(81, 81, 81, 0.721) 1px solid;
+			background-color: #fff;
+			border-radius: .5em;
+			filter: drop-shadow(.5em .5em .5em rgba(0, 0, 0, 0.33));
+			&:hover {
+				background-color: #77777707;
+				width: 22em;
+				height: 3em;
+				border: rgba(81, 81, 81, 0.721) 1px solid;
+				filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+				border-radius: .5em;
+				transition: .4s;
+			}
+			color: #000;
+			&:visited {
+				color: #000;
+			}
+			& div {
+				margin: 0 0 0 0.5em;
+				font-size: 14px;
+				font-weight: 400;
+			}
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	&__more {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 4em;
+		color:rgba(0, 0, 0, 0.33);
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: .5em;
+	}
+}
+
+#vk, #git, #inst, #shikimori, #youtube {
+	width: 16px;
+	height: 16px;
+}
+
+
+
+
+
