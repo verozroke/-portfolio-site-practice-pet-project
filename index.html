@@ -10,35 +10,61 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="profile">
-            <div class="profile__avatar">
-                <div class="profile__pic"><img src="img\5Df4MuX8h0.jpg" alt=""></div>
-                <div class="profile__nickname">Такаев Асхат</div>
-                <div class="profile__subtitle">AITU student | CS-2209</div>
+        <div class="version">v2.0</div>
+        <div class="message" id="clip-box">Link copied to the clipboard</div>
+        <div class="blocker">
+            <div class="profile">
+                <div class="profile__avatar">
+                    <!-- TODO: Попробуй сделать transitions для картинок. Может надо через background-image и массивы не нужны вовсе?-->
+                    <div class="profile__pic">
+                        <img src="img\pics\funny-mio.jpg" id="pic" alt="">
+                    </div>
+                    <div class="profile__nickname">Takayev Askhat</div>
+                    <div class="profile__subtitle">AITU student | CS-2209</div>
+                </div>
+                <div class="profile__container">
+                    <ul class="profile__nav">
+                        <li class="profile__link"><a href="https://vk.com/askhatych" target="_blank"><img src="img\vk.png" id="vk" alt="">
+                            Vkontakte</a></li>
+                        <li class="profile__link"><a href="https://www.instagram.com/askattrionis/" target="_blank"><img src="img\inst.png" id="inst" alt="">
+                            Instagram</a></li>
+                        <li class="profile__link"><a href="https://github.com/verozroke?tab=repositories" target="_blank"><img src="img\git.png" id="git" alt="">
+                            GitHub</a></li>
+                        <li class="profile__link"><a href="https://shikimori.one/verozroke" target="_blank"><img src="img\shikimori.png" id="shikimori" alt="">
+                            Shikimori</a></li>
+                        <li class="profile__link"><a href="https://www.youtube.com/channel/UCGSmTrEyUjUkdqYupahNCVA" target="_blank"><img src="img\youtube.png" id="youtube" alt="">
+                            Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="hidden" id="profile__more">
+                </div>
+
+                <!-- TODO: ИСПРАВЬ??? transition работает один раз. Элленочка пропадает навсегда-->
+                <div class="clipboard-icons">
+                    <div class="clipboard-icons__row">
+                        <div class="clipboard-icons__discord" onclick="clip(`ASKATTRIONIS#8807`)">
+                            <img src="img/discord.png" alt="" id="discord">
+                            Discord
+                        </div>
+                        <div class="clipboard-icons__telegram" onclick="clip(`https://t.me/verozroker`)">
+                            <img src="img/telegram.png" alt="" id="telegram">
+                            Telegram
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="profile__container">
-                <ul class="profile__nav">
-                    <li class="profile__link"><a href="https://vk.com/askhatych" target="_blank"><img src="img\vk.png" id="vk" alt="">
-                        <div>Vkontakte</div></a></li>
-                    <li class="profile__link"><a href="https://www.instagram.com/askattrionis/" target="_blank"><img src="img\inst.png" id="inst" alt="">
-                        <div>Instagram</div></a></li>
-                    <li class="profile__link"><a href="https://github.com/verozroke?tab=repositories" target="_blank"><img src="img\git.png" id="git" alt="">
-                        <div>GitHub</div></a></li>
-                    <li class="profile__link"><a href="https://shikimori.one/verozroke" target="_blank"><img src="img\shikimori.png" id="shikimori" alt="">
-                        <div>Shikimori</div></a></li>
-                    <li class="profile__link"><a href="https://www.youtube.com/channel/UCGSmTrEyUjUkdqYupahNCVA" target="_blank"><img src="img\youtube.png" id="youtube" alt="">
-                        <div>Youtube</div></a></li>
-                </ul>
-            </div>
-            <div class="profile__more">
-                love ellen <3
-                <ul class="profile__icons">
-                    <li class="profile__medias"><a><img src="" alt=""></a></li>
-                    <li class="profile__medias"><a><img src="" alt=""></a></li>
-                    <li class="profile__medias"><a><img src="" alt=""></a></li>
-                </ul>
+            <button class="btn-about" onclick="displayBlock(aboutBlock, profileBlock)"><img src="img/arrow-up.svg" alt=""></button>
+            <div class="block__about">
+                <!-- TODO: Надо написать инфу о себе типо-->
+                <div class="birdeme">
+                    пока что ничего, пре-альфа так скозать. завтра утром исправлю
+                </div>
             </div>
         </div>
     </div>
+    <!-- TODO: Темный режим-->
+<script src="js/app.js"></script>
+<script>
+</script>
 </body>
 </html>

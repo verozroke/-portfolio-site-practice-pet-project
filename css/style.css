@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 260%;
+  background-size: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 0.5vmin solid;
   -o-border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
      border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  position: relative;
   -webkit-animation: 2s rotate linear infinite;
           animation: 2s rotate linear infinite;
 }
@@ -176,12 +177,15 @@ footer {
 }
 
 .profile {
+  z-index: 2;
   background-color: #fff;
   width: 25em;
-  height: 48em;
+  height: 49em;
   border-radius: 2.3em;
   -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
           filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+  position: absolute;
+  left: 12.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,6 +193,11 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 .profile__avatar {
   font-family: "Montserrat", sans-serif;
@@ -205,6 +214,9 @@ footer {
   min-height: 200px;
   padding: 2em 0 0 0;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .profile__pic {
   width: 128px;
@@ -216,11 +228,45 @@ footer {
   width: 128px;
   height: 128px;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile__nickname {
-  font-weight: 400;
+  font-weight: 700;
+  width: 225px;
   font-size: 20px;
   margin: 0.5em 0 0.5em 0;
+  letter-spacing: 0.25em;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.profile__nickname::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+.profile__nickname:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+.profile__nickname:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: rgb(0, 0, 0);
 }
 .profile__subtitle {
   color: rgba(0, 0, 0, 0.8);
@@ -266,6 +312,8 @@ footer {
   border-radius: 0.5em;
   -webkit-filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
           filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+  font-size: 14px;
+  font-weight: 400;
   color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -291,28 +339,243 @@ footer {
 .profile__link a:visited {
   color: #000;
 }
-.profile__link a div {
-  margin: 0 0 0 0.5em;
-  font-size: 14px;
-  font-weight: 400;
+
+.blocker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 50em;
 }
-.profile__more {
+
+.block__about {
+  z-index: 0;
+  background-color: #fff;
+  width: 25em;
+  height: 49em;
+  border-radius: 2.3em 2.3em 2.3em 2.3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  right: 12.5em;
+  z-index: 1;
+}
+
+.btn-about {
+  position: absolute;
+  left: 10em;
+  background-color: rgb(255, 255, 255);
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  z-index: 1;
+  border-width: 1px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-style: solid;
+  border-color: #000;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 14px;
+  padding: 0 0 100px 0;
+}
+.btn-about img {
+  height: 16px;
+  width: 16px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.btn-about.active {
+  padding: 0 0 70px 0;
+  left: -2.5em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.btn-about.active img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.block__about.active {
+  right: 1.5em;
+  border-radius: 0em 2.3em 2.3em 0em;
+  -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.profile.active {
+  -webkit-filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+  left: 1em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#vk, #git, #inst, #shikimori, #youtube {
+  width: 16px;
+  height: 16px;
+  margin: 0 0.5em 0 0;
+}
+
+#telegram, #discord {
+  width: 20px;
+  height: 20px;
+}
+
+#profile__more {
+  margin: 17px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0 0 10px 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4em;
-  color: rgba(0, 0, 0, 0.33);
+  text-align: center;
+  height: 3.3em;
+  border-radius: 0;
+  min-width: 20em;
+  color: rgb(0, 0, 0);
+  background-color: #fff;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.5em;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  position: absolute;
+  top: 44em;
 }
 
-#vk, #git, #inst, #shikimori, #youtube {
-  width: 16px;
-  height: 16px;
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+
+.clipboard-icons {
+  margin: 17px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 3.3em;
+  min-width: 20em;
+  color: rgba(0, 0, 0, 0.33);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+}
+.clipboard-icons__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.clipboard-icons__discord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 50px 0 0;
+}
+.clipboard-icons__discord img {
+  margin: 0 5px 0 0;
+}
+.clipboard-icons__discord:hover {
+  color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+.clipboard-icons__telegram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.clipboard-icons__telegram img {
+  margin: 0 5px 0 0;
+}
+.clipboard-icons__telegram:hover {
+  color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  position: absolute;
+  z-index: 3;
+  top: -100px;
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0.3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.message.active {
+  top: 15px;
+}
+
+.version {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+}
+
+.birdeme {
+  height: 100px;
+  width: 250px;
+  font-size: 20px;
 }
