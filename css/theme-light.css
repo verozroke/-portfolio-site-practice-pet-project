@@ -1,0 +1,116 @@
+.wrapper {
+  background-image: url("https://i.imgur.com/ZGLsBme.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.profile {
+  background-color: #fff;
+  -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+}
+.profile__pic {
+  background-color: #fff;
+}
+.profile__nickname {
+  color: rgba(0, 0, 0, 0.5);
+}
+.profile__nickname::after {
+  background-color: rgb(0, 0, 0);
+}
+.profile__nickname:hover {
+  color: rgb(0, 0, 0);
+}
+.profile__subtitle {
+  color: rgba(0, 0, 0, 0.8);
+}
+.profile__link a {
+  border: rgba(81, 81, 81, 0.721) 1px solid;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+  color: #000;
+}
+.profile__link a:hover {
+  background-color: rgba(119, 119, 119, 0.0274509804);
+  border: rgba(81, 81, 81, 0.721) 1px solid;
+  -webkit-filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+          filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+}
+.profile__link a:visited {
+  color: #000;
+}
+
+.block__about {
+  background-color: #fff;
+  border-radius: 2.3em 2.3em 2.3em 2.3em;
+}
+
+.btn-about {
+  background-color: rgb(255, 255, 255);
+  border-color: #000;
+}
+
+.block__about.active {
+  -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+}
+
+.profile.active {
+  -webkit-filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+}
+
+#profile__more {
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+}
+
+.clipboard-icons {
+  color: rgba(0, 0, 0, 0.33);
+}
+.clipboard-icons__discord:hover {
+  color: #000;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+.clipboard-icons__telegram:hover {
+  color: #000;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.message {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.version {
+  color: #fff;
+}
+
+.theme {
+  background-color: #222222;
+  -webkit-box-shadow: 0 0 20px rgb(0, 0, 0);
+          box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.theme:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 0 rgb(0, 0, 0);
+          box-shadow: 0 0 0 rgb(0, 0, 0);
+}
+
+.theme:hover svg path {
+  fill: #222222;
+}
+
+.change__theme[data-theme=dark] {
+  display: block;
+}
+
+.change__theme[data-theme=light] {
+  display: none;
+}

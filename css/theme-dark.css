@@ -1,0 +1,160 @@
+.wrapper {
+  background-image: url("https://i.imgur.com/0Ym6ryE.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.profile {
+  background-color: #222222;
+  -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+}
+.profile__pic {
+  background-color: #222222;
+}
+.profile__nickname {
+  color: rgb(169, 169, 169);
+}
+.profile__nickname::after {
+  background-color: rgb(255, 255, 255);
+}
+.profile__nickname:hover {
+  color: rgb(255, 255, 255);
+}
+.profile__subtitle {
+  color: rgb(169, 169, 169);
+}
+.profile__link a {
+  background-color: #222222;
+  -webkit-filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(0.5em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+  border: rgba(81, 81, 81, 0.721) 2px solid;
+  color: rgb(169, 169, 169);
+}
+.profile__link a:hover {
+  background-color: #151515;
+  border: rgb(180, 180, 180) 2px solid;
+  -webkit-filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+          filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+}
+.profile__link a:visited {
+  color: rgb(169, 169, 169);
+}
+
+.block__about {
+  background-color: #222;
+  border-radius: 2.3em 2.3em 2.3em 2.3em;
+}
+
+.btn-about {
+  background-color: #222222;
+  border: rgba(81, 81, 81, 0.721) 2px solid;
+}
+.btn-about img {
+  -webkit-filter: invert(500%);
+          filter: invert(500%);
+}
+
+.btn-about.active img {
+  -webkit-filter: invert(500%);
+          filter: invert(500%);
+}
+
+.block__about.active {
+  -webkit-filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+}
+
+.profile.active {
+  -webkit-filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+          filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+}
+
+#profile__more {
+  color: rgb(255, 255, 255);
+  background-color: #222222;
+}
+
+.clipboard-icons {
+  color: rgba(255, 255, 255, 0.33);
+}
+.clipboard-icons__discord:hover {
+  color: #fff;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+}
+.clipboard-icons__discord:hover img {
+  -webkit-filter: brightness(200%);
+          filter: brightness(200%);
+}
+.clipboard-icons__telegram:hover {
+  color: #fff;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+}
+.clipboard-icons__telegram:hover img {
+  -webkit-filter: brightness(200%);
+          filter: brightness(200%);
+}
+
+.message {
+  color: rgb(169, 169, 169);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.version {
+  color: rgb(169, 169, 169);
+}
+
+.theme {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 20px rgb(0, 0, 0);
+          box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.theme svg path {
+  fill: #222222;
+}
+
+.theme:hover {
+  background-color: #222222;
+  -webkit-box-shadow: 0 0 0 rgb(0, 0, 0);
+          box-shadow: 0 0 0 rgb(0, 0, 0);
+}
+
+.theme:hover svg path {
+  fill: #fff;
+}
+
+.change__theme[data-theme=dark] {
+  display: none;
+}
+
+.change__theme[data-theme=light] {
+  display: block;
+}
+
+.love {
+  background-color: #222222;
+  color: rgb(169, 169, 169);
+}
+
+.block__about {
+  background-color: #222222;
+}
+
+askhat {
+  color: rgba(169, 169, 169, 0.5);
+}
+
+.element__text {
+  color: rgb(169, 169, 169);
+}
+.element__title {
+  color: rgb(169, 169, 169);
+}
+.element__line {
+  background-color: #cdcdcd;
+}

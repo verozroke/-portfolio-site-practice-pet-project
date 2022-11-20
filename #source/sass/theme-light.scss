@@ -1,0 +1,120 @@
+.wrapper {
+    background-image: url("https://i.imgur.com/ZGLsBme.jpg");
+    background-attachment: fixed;
+    background-position: center;
+	background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+
+.profile {
+    background-color: #fff;
+    filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+	&__pic {
+		background-color: #fff;
+	}
+	&__nickname {
+		color: rgba(0, 0, 0, 0.5);
+		&::after {
+			background-color: rgba(0, 0, 0, 1);
+		}
+		&:hover {
+			color: rgba(0, 0, 0, 1);
+		}
+	}
+	&__subtitle {
+		color: rgba(0, 0, 0, 0.8)
+	}
+	&__link {
+		& a {
+			border: rgba(81, 81, 81, 0.721) 1px solid;
+			background-color: #fff;
+			filter: drop-shadow(.5em .5em .5em rgba(0, 0, 0, 0.33));
+			&:hover {
+				background-color: #77777707;
+				border: rgba(81, 81, 81, 0.721) 1px solid;
+				filter: drop-shadow(0em 0em 0em rgba(0, 0, 0, 0));
+			}
+			color: #000;
+			&:visited {
+				color: #000;
+			}
+		}
+	}
+}
+
+
+.block__about { 
+    background-color: #fff;
+    border-radius:  2.3em 2.3em 2.3em 2.3em;
+}
+
+
+.btn-about {
+	background-color: rgb(255, 255, 255);
+	border-color: #000;
+}
+
+.block__about.active {
+	filter: drop-shadow(5em 3em 3em rgba(0, 0, 0, 0.33));
+}
+.profile.active {
+	filter: drop-shadow(1em 0.5em 0.5em rgba(0, 0, 0, 0.33));
+}
+
+
+
+
+
+#profile__more {
+	color:rgba(0, 0, 0, 1);
+	background-color: #fff;
+}
+
+
+.clipboard-icons {
+	color:rgba(0, 0, 0, 0.33);
+	&__discord {
+		&:hover {
+			color: #000;
+			filter: brightness(.5);
+		}
+	}
+	&__telegram {
+		&:hover {
+			color: #000;
+			filter: brightness(.5);
+		}
+	}
+}
+
+.message {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.version {
+	color: #fff;
+}
+
+.theme {
+	background-color: #222222;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+.theme:hover {
+	background-color: #fff;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 1);
+}
+.theme:hover svg path {
+	fill: #222222;
+}
+
+.change__theme[data-theme="dark"] {
+    display: block;
+}
+
+.change__theme[data-theme="light"] {
+    display: none;
+}
