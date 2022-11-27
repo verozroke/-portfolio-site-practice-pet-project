@@ -1,7 +1,22 @@
+const hentaiMusic = new Audio('audio/hentai.mp3')
+const aboutBlock = document.getElementsByClassName('block__about')[0]
+const profileBlock = document.getElementsByClassName('profile')[0]
+const btnBlock = document.getElementsByClassName('btn-about')[0]
 let more = document.getElementById('profile__more')
-
 const clipBox = document.getElementById('clip-box')
+const wrapper = document.getElementsByClassName('wrapper')[0]
+const pics = [`img\\pics\\funny-mio.jpg`, `img\\pics\\hikaru.jpg`, `img\\pics\\cirilla.jpg`, `img\\pics\\anderarrest.jpg`, `img\\pics\\megumin.jpg`]
+const picer =  document.getElementById('pic')
+let changeThemeButtons = document.querySelectorAll('.change__theme');
+let activeTheme = localStorage.getItem('theme');
+let currentTheme = document.querySelector('[title="theme"]')
+let love = document.getElementsByClassName('love')[0];
 
+if (!(window.matchMedia("(min-width: 703px)").matches)) {
+    profileBlock.style.position = "static"
+    btnBlock.style.display = "none"
+    aboutBlock.style.display = "none"
+}
 
 function clip(text) {
     navigator.clipboard.writeText(text);
@@ -13,10 +28,6 @@ function clip(text) {
     
 }
 
-const aboutBlock = document.getElementsByClassName('block__about')[0]
-const profileBlock = document.getElementsByClassName('profile')[0]
-const btnBlock = document.getElementsByClassName('btn-about')[0]
-
 function displayBlock(block, block2) {
     block.style.display = 'block'
     setTimeout(() => {
@@ -25,12 +36,6 @@ function displayBlock(block, block2) {
         btnBlock.classList.toggle('active')
     }, 0)
 }
-
-const pics = [`img\\pics\\funny-mio.jpg`, `img\\pics\\hikaru.jpg`, `img\\pics\\cirilla.jpg`, `img\\pics\\anderarrest.jpg`, `img\\pics\\megumin.jpg`]
-
-
-
-const picer =  document.getElementById('pic')
 let count = 1;
 picer.addEventListener('click', () => {
     picer.classList.toggle('fade')
@@ -44,8 +49,6 @@ picer.addEventListener('click', () => {
     }
 })
 
-
-let changeThemeButtons = document.querySelectorAll('.change__theme');
 changeThemeButtons.forEach(button => {
     button.addEventListener('click', function () {
         let theme = this.dataset.theme;
@@ -62,17 +65,24 @@ function applyTheme(themeName) {
     localStorage.setItem('theme', themeName);
 }
 
-
-let activeTheme = localStorage.getItem('theme');
-
 if(activeTheme === null || activeTheme === 'light') { 
     applyTheme('light');
 } else if (activeTheme === 'dark') { 
     applyTheme('dark');
 }
 
-
-let love = document.getElementsByClassName('love')[0];
+window.addEventListener("resize", function() {
+    if (!(window.matchMedia("(min-width: 703px)").matches)) {
+        profileBlock.style.position = "static"
+        btnBlock.style.display = "none"
+        aboutBlock.style.display = "none"
+        
+    }
+    else{
+        profileBlock.style.position = "absolute"
+        btnBlock.style.display = "inline-block"
+    }
+})
 
 document.addEventListener('animationstart', function (e) {
     if (e.animationName === 'fade-in') {
@@ -88,3 +98,15 @@ document.addEventListener('animationend', function (e) {
         }
     }
 });
+
+
+let clicksToAva = 0
+picer.addEventListener('click', event => {
+    clicksToAva+= 1
+    console.log('Пасхалочка через: ' + (100-clicksToAva))
+    if (clicksToAva === 10) {
+        alert('Freestylooooo Time!~~~')
+        hentaiMusic.play()
+        clicksToAva = 0
+    }
+})
